@@ -9,7 +9,7 @@ _**Custom Portfolio** Is an open source free to use portfolio starter. The idea 
 
 ## MVP
 
-_The **Custom Portfolio** MVP Is a working portfolio starter set that will allow a user to login to add projects and skills, as well as update their contact information and view messages left by visitors._
+_The **Custom Portfolio** MVP Is a working portfolio starter set that will allow a user to login to add projects and skills, as well as update their contact information._
 
 <br>
 
