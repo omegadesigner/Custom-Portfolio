@@ -1,27 +1,5 @@
 # Custom Portfolio
 
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
-- [Overview](#overview)
-- [MVP](#mvp)
-  - [Goals](#goals)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
-  - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
-    - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
-    - [Time Estimates](#time-estimates)
-  - [Server (Back End)](#server-back-end)
-    - [ERD Model](#erd-model)
-- [Post-MVP](#post-mvp)
-- [Code Showcase](#code-showcase)
-- [Code Issues & Resolutions](#code-issues--resolutions)
-
-<br>
-
 ## Overview
 
 _**Custom Portfolio** Is an open source free to use portfolio starter. The idea is that someone can clone down the git repo and deploy the site to heroku and netlify, or whatever package their chip they choose, and then adjust the username and password for custom login. At that point they will be able to add examples of their project work, skills they wish to showcase, and receive messages from anyone browsing the site who wishes to contact them. They will be able to add edit and delete new projects and skills along with being able to delete read messages._
@@ -31,17 +9,19 @@ _**Custom Portfolio** Is an open source free to use portfolio starter. The idea 
 
 ## MVP
 
-_The **Custom Portfolio** MVP Is a working portfolio starter set that will allow a user to login to add projects and skills, as well as update their contact information and view messages left by visitors ._
+_The **Custom Portfolio** MVP Is a working portfolio starter set that will allow a user to login to add projects and skills, as well as update their contact information and view messages left by visitors._
 
 <br>
 
 ### Goals
 
 - _Admin User Login_
+- _Update login credentials_
+- _Update Contact Info_
 - _Full CRUD for Project list_
 - _Full CRUD for Skill list_
+- _Provide Contact Methods_
 - _Recieve, view and delete messages_
-- _Update login credentials_
 
 <br>
 
@@ -65,8 +45,6 @@ _The **Custom Portfolio** MVP Is a working portfolio starter set that will allow
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
 [Wireframes](https://whimsical.com/custom-portfolio-wireframes-6jeAMoKDLw4T77Ar7aqwdw)
 
 #### Component Hierarchy
@@ -75,14 +53,36 @@ _The **Custom Portfolio** MVP Is a working portfolio starter set that will allow
 ``` structure
 
 src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
 |__ components/
-      |__ Header.jsx
+      |__ ProjectCards.jsx
+      |__ ProjectDetails.jsx
+      |__ EditProject.jsx
+      |__ AddProject.jsx
+      |__ SkillsList.jsx
+      |__ SkillCards.jsx
+      |__ EditSkill.jsx
+      |__ AddSkill.jsx
+      |__ UpdateAdmin.jsx
+      |__ UpdateContact.jsx
+      |__ MessageCards.jsx
+      |__ MessageDetails.jsx
+|__ containers/
+      |__ MainContainer.jsx
+|__ shared/
+      |__ Layout.jsx
+      |__ Navbar.jsx
+      |__ Footer.jsx
+|__ screens/
+      |__ Home.jsx
+      |__ Projects.jsx
+      |__ Messages.jsx
+      |__ UserOptions.jsx
 |__ services/
+      |__ apiConfig.js
+      |__ auth.jsx
+      |__ projects.jsx
+      |__ skills.jsx
+      |__ messages.jsx
 
 ```
 
@@ -96,16 +96,20 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Backend Boilerplate |    H     |     3 hrs      |     2 hrs     |     TBD     |
-| Creat Migrations    |    H     |     3 hrs      |     2 hrs     |     TBD     |
-| Crud for Projects   |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Crud for Skills     |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Crud for Admin      |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Crud for Messages   |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Reactapp Boilerplate |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Create Screens      |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| Work on list renders |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Backend Boilerplate |    H     |     3 hrs      |    N/A hrs    |     TBD     |
+| Create Migrations   |    H     |     3 hrs      |    N/A hrs    |     TBD     |
+| Create Associations |    H     |     3 hrs      |    N/A hrs    |     TBD     |
+| CRUD for Projects   |    H     |     2 hrs      |    N/A hrs    |     TBD     |
+| CRUD for Skills     |    H     |     2 hrs      |    N/A hrs    |     TBD     |
+| CRUD for Admin      |    H     |     2 hrs      |    N/A hrs    |     TBD     |
+| CRUD for Messages   |    H     |     2 hrs      |    N/A hrs    |     TBD     |
+| Reactapp Boilerplate|    H     |     3 hrs      |    N/A hrs    |     TBD     |
+| Create Screens      |    H     |     6 hrs      |    N/A hrs    |     TBD     |
+| Work on list renders|    H     |     2 hrs      |    N/A hrs    |     TBD     |
+| CSS Screens         |    H     |     6 hrs      |    N/A hrs    |     TBD     |
+| CSS Components      |    H     |     6 hrs      |    N/A hrs    |     TBD     |
+| Working on Popups   |    H     |     6 hrs      |    N/A hrs    |     TBD     |
+| TOTAL               |          |     43 hrs     |    N/A hrs    |     TBD     |
 <br>
 
 ### Server (Back End)
@@ -129,8 +133,10 @@ src
 
 ## Code Showcase
 
-> 
+```
+Code Goes Here
+```
 
 ## Code Issues & Resolutions
 
-> 
+None yet
