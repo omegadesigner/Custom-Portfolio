@@ -78,10 +78,10 @@ src
       |__ UserOptions.jsx
 |__ services/
       |__ apiConfig.js
-      |__ auth.jsx
-      |__ projects.jsx
-      |__ skills.jsx
-      |__ messages.jsx
+      |__ auth.js
+      |__ projects.js
+      |__ skills.js
+      |__ messages.js
 
 ```
 
