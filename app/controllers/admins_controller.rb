@@ -15,16 +15,16 @@ class AdminsController < ApplicationController
 
   # POST /admins
   def create
-    @user = User.new(user_params)
+    @admin = Admin.new(admin_params)
     
-    if @user.save
-      @token = encode({id: @user.id})
+    if @admin.save
+      @token = encode({id: @admin.id})
       render json: {
-        user: @user.attributes.except("password_digest"),
+        user: @admin.attributes.except("password_digest"),
         token: @token
         }, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: @admin.errors, status: :unprocessable_entity
     end
   end
 
