@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :set_admin, only: [:show, :update, :destroy]
+  before_action :set_admin, only: [:show, :update]
 
   # GET /admins
   def index
@@ -15,12 +15,16 @@ class AdminsController < ApplicationController
 
   # POST /admins
   def create
-    @admin = Admin.new(admin_params)
-
-    if @admin.save
-      render json: @admin, status: :created, location: @admin
+    @user = User.new(user_params)
+    
+    if @user.save
+      @token = encode({id: @user.id})
+      render json: {
+        user: @user.attributes.except("password_digest"),
+        token: @token
+        }, status: :created
     else
-      render json: @admin.errors, status: :unprocessable_entity
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -33,10 +37,10 @@ class AdminsController < ApplicationController
     end
   end
 
-  # DELETE /admins/1
-  def destroy
-    @admin.destroy
-  end
+  # # DELETE /admins/1
+  # def destroy
+  #   @admin.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -46,6 +50,6 @@ class AdminsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_params
-      params.require(:admin).permit(:username, :password_digest, :full_name, :email, :linkedin, :phone)
+      params.require(:admin).permit(:username, :password_digest)
     end
 end
