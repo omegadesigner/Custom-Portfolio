@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :update]
+  before_action :authorize_request, only: :update
 
   # GET /admins
   def index
@@ -20,7 +21,7 @@ class AdminsController < ApplicationController
     if @admin.save
       @token = encode({id: @admin.id})
       render json: {
-        user: @admin.attributes.except("password_digest"),
+        admin: @admin.attributes.except("password_digest"),
         token: @token
         }, status: :created
     else
@@ -31,7 +32,7 @@ class AdminsController < ApplicationController
   # PATCH/PUT /admins/1
   def update
     if @admin.update(admin_params)
-      render json: @admin
+      render json: @admin.attributes.except("password_digest")
     else
       render json: @admin.errors, status: :unprocessable_entity
     end
@@ -50,6 +51,6 @@ class AdminsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_params
-      params.require(:admin).permit(:username, :password_digest)
+      params.require(:admin).permit(:username, :password, :full_name, :email, :linkedin, :phone)
     end
 end

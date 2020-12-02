@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
         token = header.split(' ').last if header
         begin
           @decoded = decode(token)
-          @current_user = User.find(@decoded[:id])
+          @current_user = Admin.find(@decoded[:id])
         rescue ActiveRecord::RecordNotFound => e
           render json: { errors: e.message }, status: :unauthorized
         rescue JWT::DecodeError => e
