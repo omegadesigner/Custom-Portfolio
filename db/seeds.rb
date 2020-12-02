@@ -10,6 +10,6 @@ Admin.destroy_all
 Project.destroy_all
 Skill.destroy_all
 
-@admin = Admin.create!(username: 'admin', password: 'admin')
+@admin = Admin.create!(username: 'admin', password: 'porfolioadmin')
 
 puts "#{Admin.count} user created"
