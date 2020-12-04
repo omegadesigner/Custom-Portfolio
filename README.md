@@ -9,7 +9,7 @@ _**Custom Portfolio** Is an open source free to use portfolio starter. The idea 
 
 ## MVP
 
-_The **Custom Portfolio** MVP Is a working portfolio starter set that will allow a user to login to add projects and skills, as well as update their contact information and view messages left by visitors._
+_The **Custom Portfolio** MVP Is a working portfolio starter set that will allow a user to login to add projects and skills, as well as update their contact information._
 
 <br>
 
@@ -21,7 +21,6 @@ _The **Custom Portfolio** MVP Is a working portfolio starter set that will allow
 - _Full CRUD for Project list_
 - _Full CRUD for Skill list_
 - _Provide Contact Methods_
-- _Recieve, view and delete messages_
 
 <br>
 
@@ -79,10 +78,10 @@ src
       |__ UserOptions.jsx
 |__ services/
       |__ apiConfig.js
-      |__ auth.jsx
-      |__ projects.jsx
-      |__ skills.jsx
-      |__ messages.jsx
+      |__ auth.js
+      |__ projects.js
+      |__ skills.js
+      |__ messages.js
 
 ```
 
@@ -102,14 +101,13 @@ src
 | CRUD for Projects   |    H     |     2 hrs      |    N/A hrs    |     TBD     |
 | CRUD for Skills     |    H     |     2 hrs      |    N/A hrs    |     TBD     |
 | CRUD for Admin      |    H     |     2 hrs      |    N/A hrs    |     TBD     |
-| CRUD for Messages   |    H     |     2 hrs      |    N/A hrs    |     TBD     |
 | Reactapp Boilerplate|    H     |     3 hrs      |    N/A hrs    |     TBD     |
 | Create Screens      |    H     |     6 hrs      |    N/A hrs    |     TBD     |
 | Work on list renders|    H     |     2 hrs      |    N/A hrs    |     TBD     |
 | CSS Screens         |    H     |     6 hrs      |    N/A hrs    |     TBD     |
 | CSS Components      |    H     |     6 hrs      |    N/A hrs    |     TBD     |
 | Working on Popups   |    H     |     6 hrs      |    N/A hrs    |     TBD     |
-| TOTAL               |          |     43 hrs     |    N/A hrs    |     TBD     |
+| TOTAL               |          |     41 hrs     |    N/A hrs    |     TBD     |
 <br>
 
 ### Server (Back End)
@@ -124,6 +122,7 @@ src
 
 ## Post-MVP
 
+- _Recieve, view and delete messages_
 - _Pre-seeded Skill list_
 - _Filter by Skills for projects_
 - _Download Resume section_

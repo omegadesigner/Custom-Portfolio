@@ -1,0 +1,47 @@
+.ProjectCards-layout {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 25vh;
+    background-color: black;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
+}
+
+.ProjectCards-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 68%;
+    height: 90%;
+    background-color: grey;
+    border: 4px ridge black;
+}
+
+.ProjectCards-snapshot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 90%;
+    background-color: white;
+    border: 4px ridge black;
+}
+
+.ProjectCards-img {
+    width: 100%;
+    background-color: grey;
+}
+
+.ProjectCards-skills {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    background-color: grey;
+}

@@ -1,0 +1,8 @@
+.UpdateAdmin-layout {
+    display: flex;
+}
+
+.UpdateAdmin-form {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,52 @@
+.UserOptions-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 88vh;
+}
+
+.UserOptions-left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 88vh;
+}
+
+.UserOptions-edit-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 44vh;
+}
+
+.UserOptions-edit-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 44vh;
+}
+
+.UserOptions-left-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 88vh;
+}
+
+.UserOptions-skill-list {
+    
+}
+
+.UserOptions-skill-card {
+    display: flex;
+}
+
+.UserOptions-skill-img {
+    width: 25px;
+}
