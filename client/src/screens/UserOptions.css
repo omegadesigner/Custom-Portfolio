@@ -40,7 +40,7 @@
 }
 
 .UserOptions-skill-list {
-    
+    display: flex;
 }
 
 .UserOptions-skill-card {
