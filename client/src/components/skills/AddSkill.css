@@ -1,0 +1,23 @@
+.AddSkill-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddSkill-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddSkill-card {
+    display: flex;
+}
+
+.AddSkill-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

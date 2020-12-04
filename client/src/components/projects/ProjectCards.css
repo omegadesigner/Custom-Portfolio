@@ -1,7 +1,7 @@
 .ProjectCards-layout {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 30vw;
     height: 25vh;
@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 68%;
     height: 90%;
     background-color: grey;
     border: 4px ridge black;
@@ -26,8 +26,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 25%;
+    height: 90%;
     background-color: white;
+    border: 4px ridge black;
 }
 
 .ProjectCards-img {
@@ -37,8 +39,9 @@
 
 .ProjectCards-skills {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
+    height: 90%;
     background-color: grey;
 }

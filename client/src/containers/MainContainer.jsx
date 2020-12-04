@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Switch, Route, useHistory} from 'react-router-dom';
 import {getAllProjects} from '../services/projects';
-import {getAllSkills} from '../services/skills';
+import {getAllSkills, createSkill} from '../services/skills';
 import Home from '../screens/Home';
 import Messages from '../screens/Messages';
 import Projects from '../screens/Projects';
@@ -26,6 +26,11 @@ function MainContainer(props) {
         fetchSkills();
     }, []);
 
+    async function handleCreateSkill(skillData) {
+        const newSkill = await createSkill(skillData);
+        setSkills(prevState => [...prevState, newSkill])
+    }
+    
     return (
         <div className='MainContainer-layout'>
             <Switch>
@@ -44,6 +49,8 @@ function MainContainer(props) {
                     {props.currentUser ?
                         <UserOptions
                             currentUser={props.currentUser}
+                            skills={skills}
+                            handleCreateSkill={handleCreateSkill}
                         />
                     : <></>}
                 </Route>

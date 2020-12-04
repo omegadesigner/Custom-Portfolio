@@ -18,10 +18,11 @@ function ProjectCards(props) {
                 />
                 <div className='ProjectCards-skills'>
                     {props.skills.map(skill => (
-                        <SkillCards 
-                            className='ProjectCards-skills'
-                            skill={skill}
-                        />
+                        // <SkillCards 
+                        //     className='ProjectCards-skills'
+                        //     skill={skill}
+                        // />
+                    <div key={skill.id}>- {skill.name}</div>
                         ))
                     }
                 </div>

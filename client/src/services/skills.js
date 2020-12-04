@@ -10,17 +10,17 @@ export const getOneSkill = async (id) => {
     return resp.data;
 }
 
-export const postSkill = async (skillData) => {
+export const createSkill = async (skillData) => {
     const resp = await api.post(`/skills`, {skill: skillData});
     return resp.data;
 }
 
-export const putSkill = async (id, skillData) => {
+export const editSkill = async (id, skillData) => {
     const resp = await api.put(`/skills/${id}`, {skill: skillData});
     return resp.data;
 }
 
-export const destroySkill = async (id) => {
+export const deleteSkill = async (id) => {
     const resp = await api.delete(`/skills/${id}`);
     return resp;
 }

@@ -5,12 +5,12 @@ export const getAllMessages = async () => {
     return resp.data;
 }
 
-export const postMessage = async (messageData) => {
+export const createMessage = async (messageData) => {
     const resp = await api.post(`/messages`, {message: messageData});
     return resp.data;
 }
 
-export const destroyMessage = async (id) => {
+export const deleteMessage = async (id) => {
     const resp = await api.delete(`/messages/${id}`);
     return resp;
 }
