@@ -5,8 +5,18 @@ import './shared.css';
 function Footer(props) {
     return (
         <div className='Footer-layout'>
-            <Link to='/dummy'>github.com/user</Link>
-            <Link to='/login'>L</Link>
+            <Link 
+                className='Footer-link' 
+                to='/dummy'>
+                github.com/user
+            </Link>
+            <div className='Footer-login'>
+            {props.currentUser ? 
+            <div onClick={() => props.handleLogout()}>Logout</div>
+            :
+            <div onClick={() => props.handleDisplayLogin()}>Login</div>
+            }
+            </div>
         </div>
     );
 }

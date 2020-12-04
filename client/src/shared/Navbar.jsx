@@ -6,12 +6,22 @@ function Navbar(props) {
 
     return (
         <div className='Navbar-layout'>
-            <Link to='/'>Home</Link>
-            <Link to='/projects'>Projects</Link>
-            <Link to='/contactme'>Contact Me</Link>
-            <h2>User Full Name</h2>
-            <Link to='/messages'>Messages</Link>
-            <Link to='/useroptions'>User Options</Link>
+            <div className='Navbar-links'>
+                <Link to='/'>Home</Link>
+                <Link to='/projects'>Projects</Link>
+                <Link to='/contactme'>Contact Me</Link>
+            </div>
+            <h2 className='Navbar-username'>
+                User Full Name
+            </h2>
+            {props.currentUser ?
+            <div className='Navbar-links-admin'>
+                <Link to='/messages'>Messages</Link>
+                <Link to='/useroptions'>User Options</Link>
+            </div>
+            :
+            <div className='Navbar-links-admin'/>
+            }
         </div>
     );
 }
