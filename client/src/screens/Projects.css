@@ -14,6 +14,12 @@
     height: 28vh;
 }
 
+.Projects-window-button {
+    position: absolute;
+    right: 20px;
+    margin-top: 20px;
+}
+
 .Projects-window-list {
     display: grid;
     align-items: center;

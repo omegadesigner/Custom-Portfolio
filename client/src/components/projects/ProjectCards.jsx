@@ -1,32 +1,82 @@
-import React from 'react';
-import SkillCards from '../skills/SkillCards'
+import React, {useState} from 'react';
+import EditProject from './EditProject'
+import ProjectDetail from './ProjectDetails'
 import './ProjectCards.css';
 
 function ProjectCards(props) {
+    const [displayProject, setDisplayProject] = useState("none");
+
+    function handleDisplayProject() {
+        setDisplayProject("flex")
+    }
+    function handleCloseProject() {
+        setDisplayProject("none")
+    }
 
     return (
         <div className='ProjectCards-layout'>
-            <div className='ProjectCards-info'>
-                <h3>Project Name</h3>
+            <div 
+                className='ProjectCards-info'
+                onClick={() => handleDisplayProject()}
+            >
+                <h3>{props.project.name}</h3>
                 <p>{props.project.short_description}</p>
             </div>
             <div className='ProjectCards-snapshot'>
                 <img 
                     className='ProjectCards-img'
                     src={props.project.thumbnail_url}
-                    alt="{props.project.name}"
+                    alt={props.project.name}
                 />
                 <div className='ProjectCards-skills'>
                     {props.skills.map(skill => (
-                        // <SkillCards 
-                        //     className='ProjectCards-skills'
-                        //     skill={skill}
-                        // />
-                    <div key={skill.id}>- {skill.name}</div>
-                        ))
-                    }
+                    <div  
+                        className='ProjectCards-each-skill' 
+                        key={skill.id}>- {skill.name}
+                    </div>
+                    ))}
                 </div>
             </div>
+            {props.currentUser ?
+            <div 
+            className="project-modal" 
+            style={{display: displayProject}}
+            >
+                <div className="project-popup">
+                    <div 
+                        className="close"
+                        onClick={handleCloseProject}>&times;
+                    </div>
+                    <div className="project-popup-details">
+                        <EditProject 
+                            skills={props.skills}
+                            project={props.project}
+                            handleEditProject={props.handleEditProject}
+                            handleDeleteProject={props.handleDeleteProject}
+                            handleCloseProject={handleCloseProject}
+                        />
+                    </div>
+                </div>
+            </div>
+            :
+            <div 
+            className="project-modal" 
+            style={{display: displayProject}}
+            >
+                <div className="project-popup">
+                    <div 
+                        className="close"
+                        onClick={handleCloseProject}>&times;
+                    </div>
+                    <div className="project-popup-details">
+                        <ProjectDetail 
+                            skills={props.skills}
+                            project={props.project}
+                            />
+                    </div>
+                </div>
+            </div>
+            }
         </div>
     );
 }

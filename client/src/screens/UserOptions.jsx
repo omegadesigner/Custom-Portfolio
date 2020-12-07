@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {editAdmin} from '../services/admin';
 import UpdateAdmin from '../components/admin/UpdateAdmin'
 import UpdateContact from '../components/admin/UpdateContact'
 import AddSkill from '../components/skills/AddSkill'
+import EditSkill from '../components/skills/EditSkill'
 import './UserOptions.css';
 
 function UserOptions(props) {
@@ -30,19 +31,12 @@ function UserOptions(props) {
             <div className='UserOptions-right-panel'>
                 <div className='UserOptions-skill-list'>
                     {props.skills.map((skill) => (
-                        <div 
-                        className='UserOptions-skill-card' 
-                        key={skill.id}
-                        >
-                            <img 
-                                className='UserOptions-skill-img' 
-                                src={skill.thumbnail_url} 
-                                alt={skill.name}
-                                />
-                            <div> - {skill.name}</div>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </div>
+                            <EditSkill 
+                                key={skill.id}
+                                skill={skill}
+                                handleEditSkill={props.handleEditSkill}
+                                handleDeleteSkill={props.handleDeleteSkill}
+                            />
                     ))}
                 </div>
             </div>

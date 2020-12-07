@@ -20,7 +20,6 @@ function UpdateAdmin(props) {
         <div className='UpdateAdmin-layout'>
             <div  className='UpdateAdmin-card'>
                 <h3>Edit Admin Info</h3>
-                <hr/>
                 <form 
                     className='UpdateAdmin-form'
                     onSubmit={(e) => {

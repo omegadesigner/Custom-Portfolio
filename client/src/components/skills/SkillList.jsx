@@ -9,10 +9,12 @@ function SkillList(props) {
                 <div className='SkillList-window-header'>
                     <h3>Skills</h3>
                 </div>
-                {props.skills.map(skill => (
-                    <SkillCards skill={skill}/>
-                ))
-                }
+                <div className='SkillList-window-container'>
+                    {props.skills.map(skill => (
+                        <SkillCards key={skill.id} skill={skill}/>
+                    ))
+                    }
+                </div>
             </div>
         </div>
     );

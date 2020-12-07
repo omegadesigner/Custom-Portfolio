@@ -5,6 +5,7 @@ function AddSkill(props) {
     const [formData, setFormData] = useState({
         thumbnail_url: "",
         name: "",
+        display: false
     })
 
     function handleChange(e) {
@@ -33,14 +34,14 @@ function AddSkill(props) {
                     <input 
                         type='text'
                         name='thumbnail_url'
-                        placeholder='Change Thumbnail URL'
+                        placeholder='Enter Thumbnail URL'
                         value={formData.thumbnail_url}
                         onChange={handleChange}
                     />
                     <input 
                         type='text'
                         name='name'
-                        placeholder='Change name'
+                        placeholder='Enter Skill Name'
                         value={formData.name}
                         onChange={handleChange}
                     />

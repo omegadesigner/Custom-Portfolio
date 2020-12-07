@@ -5,18 +5,40 @@ import './shared.css';
 
 function Layout(props) {
     const [displayLogin, setDisplayLogin] = useState("none");
-    const [formData, setFormData] = useState({
+    const [displayContact, setDisplayContact] = useState("none");
+    const [formDataContact, setFormDataContact] = useState({
+        contact_name: "",
+        contact_email: "",
+        contact_phone: "",
+        message: ""
+    })
+    const [formDataLogin, setFormDataLogin] = useState({
         username: "",
         password: ""
     })
 
-    function handleChange(e) {
+    function handleChangeContact(e) {
         const {name, value} = e.target;
-        setFormData(prevState => ({
+        setFormDataContact(prevState => ({
             ...prevState,
             [name]: value
         }))
     } 
+
+    function handleChangeLogin(e) {
+        const {name, value} = e.target;
+        setFormDataLogin(prevState => ({
+            ...prevState,
+            [name]: value
+        }))
+    } 
+
+    function handleDisplayContact() {
+        setDisplayContact("flex")
+    }
+    function handleCloseContact() {
+        setDisplayContact("none")
+    }
 
     function handleDisplayLogin() {
         setDisplayLogin("flex")
@@ -25,17 +47,76 @@ function Layout(props) {
         setDisplayLogin("none")
     }
 
-    window.onclick = function(event) {
-        if (event.target.attributes[0]) {
-            if (event.target.attributes[0].value == "login-modal") {
-                setDisplayLogin("none")
-            }
-        }
-    } 
-
     return (
         <div className='Layout-layout'>
-            <Navbar currentUser={props.currentUser}/>
+            <Navbar 
+                currentUser={props.currentUser}
+                handleDisplayContact={handleDisplayContact}
+            />
+            <div 
+                className="contact-modal" 
+                style={{display: displayContact}}
+            >
+                <div className="contact-popup">
+                    <div 
+                        className="close"
+                        onClick={handleCloseContact}>&times;
+                    </div>
+                    <div className='contact-display'>
+                            {props.currentUser ? 
+                        <div className='contact-info'>
+                            <h2>Contact Me</h2>
+                            <h3>{props.currentUser.full_name}</h3>
+                            <div>{props.currentUser.email}</div>
+                            <div>{props.currentUser.linkedin}</div>
+                            <div>{props.currentUser.phone}</div>
+                        </div>
+                        :<></>
+                        }
+                        <form className='contact-form' onSubmit={(e) => {
+                            e.preventDefault()
+                            props.handleLeaveMessage(formDataContact)
+                            handleCloseContact()
+                        }}>
+                            <h2>Leave Me A Message</h2>
+                            <input 
+                                type='text'
+                                name='contact_name'
+                                placeholder='Enter your name'
+                                value={formDataContact.contact_name}
+                                onChange={handleChangeContact}
+                            />
+                            <br/>
+                            <input 
+                                type='text'
+                                name='contact_email'
+                                placeholder='Enter your email'
+                                value={formDataContact.username}
+                                onChange={handleChangeContact}
+                            />
+                            <br/>
+                            <input 
+                                type='text'
+                                name='contact_phone'
+                                placeholder='Enter your phone number'
+                                value={formDataContact.contact_phone}
+                                onChange={handleChangeContact}
+                            />
+                            <br/>
+                            <textarea
+                                type='text'
+                                name='message'
+                                placeholder='Please leave a message and I will get back to you as soon as possible.'
+                                value={formDataContact.message}
+                                onChange={handleChangeContact}
+                            />
+                            <div>
+                                <button>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <div 
                 className="login-modal" 
                 style={{display: displayLogin}}
@@ -46,7 +127,7 @@ function Layout(props) {
                         onClick={handleCloseLogin}>&times;</div>
                     <form className='Login-form' onSubmit={(e) => {
                         e.preventDefault()
-                        props.handleLogin(formData)
+                        props.handleLogin(formDataLogin)
                         handleCloseLogin()
                     }}>
                         <h3>Login</h3>
@@ -55,8 +136,8 @@ function Layout(props) {
                             <input 
                                 type='text'
                                 name='username'
-                                value={formData.username}
-                                onChange={handleChange}
+                                value={formDataLogin.username}
+                                onChange={handleChangeLogin}
                             />
                         </label>
                         <br/>
@@ -64,8 +145,8 @@ function Layout(props) {
                             <input 
                                 type='password'
                                 name='password'
-                                value={formData.password}
-                                onChange={handleChange}
+                                value={formDataLogin.password}
+                                onChange={handleChangeLogin}
                             />
                         </label>
                         <div>

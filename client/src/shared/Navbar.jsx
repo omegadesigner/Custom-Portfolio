@@ -9,7 +9,7 @@ function Navbar(props) {
             <div className='Navbar-links'>
                 <Link to='/'>Home</Link>
                 <Link to='/projects'>Projects</Link>
-                <Link to='/contactme'>Contact Me</Link>
+                <div onClick={() => props.handleDisplayContact()}>Contact Me</div>
             </div>
             <h2 className='Navbar-username'>
                 User Full Name

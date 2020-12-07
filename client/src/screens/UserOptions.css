@@ -31,7 +31,7 @@
     height: 44vh;
 }
 
-.UserOptions-left-panel {
+.UserOptions-right-panel {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,12 +41,13 @@
 
 .UserOptions-skill-list {
     display: flex;
-}
-
-.UserOptions-skill-card {
-    display: flex;
-}
-
-.UserOptions-skill-img {
-    width: 25px;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    width: 30vw;
+    height: 75vh;
+    background-color: grey;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
+    margin: 5px auto;
 }

@@ -1,0 +1,26 @@
+.UpdateContact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 30vw;
+}
+
+.UpdateContact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45vw;
+    height: 30vh;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
+    background-color: grey;
+}
+
+.UpdateContact-form {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 15vh;
+}
