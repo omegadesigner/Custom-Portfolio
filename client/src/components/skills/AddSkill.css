@@ -21,7 +21,9 @@
 .AddSkill-card {
     display: flex;
 }
-
+.AddSkill-img {
+    width: 25px;
+}
 .AddSkill-form {
     display: flex;
     flex-direction: column;

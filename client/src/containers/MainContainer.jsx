@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Switch, Route, useHistory} from 'react-router-dom';
 import {getAllProjects} from '../services/projects';
-import {getAllSkills, createSkill} from '../services/skills';
+import {getAllSkills, createSkill, editSkill, deleteSkill} from '../services/skills';
 import {getAllMessages} from '../services/message';
 import Home from '../screens/Home';
 import Messages from '../screens/Messages';
@@ -13,6 +13,7 @@ function MainContainer(props) {
     const [projects, setProjects] = useState([]);
     const [skills, setSkills] = useState([]);
     const [messages, setMessages] = useState([]);
+    const [updated, setUpdated] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
@@ -33,9 +34,35 @@ function MainContainer(props) {
         fetchMessages();
     }, []);
 
+    useEffect(() => {
+        const fetchProjects = async () => {
+            const projectData = await getAllProjects();
+            setProjects(projectData);
+        }
+        const fetchSkills = async () => {
+            const skillData = await getAllSkills();
+            setSkills(skillData);
+        }
+        const fetchMessages = async () => {
+            const messageData = await getAllMessages();
+            setMessages(messageData);
+        }
+        fetchProjects();
+        fetchSkills();
+        fetchMessages();
+    }, [updated]);
+
     async function handleCreateSkill(skillData) {
         const newSkill = await createSkill(skillData);
         setSkills(prevState => [...prevState, newSkill])
+    }
+    async function handleEditSkill(id, skillData) {
+        await editSkill(id, skillData);
+        setUpdated(prevState => !prevState)
+    }
+    async function handleDeleteSkill(id) {
+        await deleteSkill(id);
+        setUpdated(prevState => !prevState)
     }
     
     return (
@@ -60,6 +87,8 @@ function MainContainer(props) {
                             currentUser={props.currentUser}
                             skills={skills}
                             handleCreateSkill={handleCreateSkill}
+                            handleEditSkill={handleEditSkill}
+                            handleDeleteSkill={handleDeleteSkill}
                         />
                     : <></>}
                 </Route>
