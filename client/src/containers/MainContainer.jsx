@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Switch, Route, useHistory} from 'react-router-dom';
 import {getAllProjects} from '../services/projects';
 import {getAllSkills, createSkill, editSkill, deleteSkill} from '../services/skills';
-import {getAllMessages} from '../services/message';
+import {getAllMessages, deleteMessage} from '../services/message';
 import Home from '../screens/Home';
 import Messages from '../screens/Messages';
 import Projects from '../screens/Projects';
@@ -64,6 +64,10 @@ function MainContainer(props) {
         await deleteSkill(id);
         setUpdated(prevState => !prevState)
     }
+    async function handleDeleteMessage(id) {
+        await deleteMessage(id);
+        setUpdated(prevState => !prevState)
+    }
     
     return (
         <div className='MainContainer-layout'>
@@ -78,6 +82,7 @@ function MainContainer(props) {
                     {props.currentUser ?
                         <Messages 
                             messages={messages}
+                            handleDeleteMessage={handleDeleteMessage}
                         /> 
                     : <></>}
                 </Route>

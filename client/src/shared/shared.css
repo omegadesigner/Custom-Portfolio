@@ -25,6 +25,9 @@
     border: 1px solid #888;
     width: 40vw;
     height: 50vh; 
+    background-color: grey;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
 }
 
 .contact-display {

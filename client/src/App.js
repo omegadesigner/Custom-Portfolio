@@ -1,6 +1,7 @@
 import { useHistory} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import {loginUser, removeToken, verifyUser} from './services/auth'
+import {createMessage} from './services/message'
 
 import './App.css';
 import Layout from './shared/Layout';
@@ -34,12 +35,18 @@ function App() {
     history.push('/');
   }
 
+  async function handleLeaveMessage(loginData) {
+    await createMessage(loginData)
+    history.push('/')
+  }
+
   return (
     <div className="App-layout">
       <Layout 
         currentUser={currentUser}
         handleLogin={handleLogin}
         handleLogout={handleLogout}
+        handleLeaveMessage={handleLeaveMessage}
       >
         <MainContainer currentUser={currentUser}/>
       </Layout>

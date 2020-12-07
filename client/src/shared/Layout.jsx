@@ -65,8 +65,8 @@ function Layout(props) {
                     <div className='contact-display'>
                             {props.currentUser ? 
                         <div className='contact-info'>
-                            <h3>Contact Me</h3>
-                            <div>{props.currentUser.full_name}</div>
+                            <h2>Contact Me</h2>
+                            <h3>{props.currentUser.full_name}</h3>
                             <div>{props.currentUser.email}</div>
                             <div>{props.currentUser.linkedin}</div>
                             <div>{props.currentUser.phone}</div>
@@ -75,10 +75,10 @@ function Layout(props) {
                         }
                         <form className='contact-form' onSubmit={(e) => {
                             e.preventDefault()
-                            props.handleContact(formDataContact)
+                            props.handleLeaveMessage(formDataContact)
                             handleCloseContact()
                         }}>
-                            <h3>Leave Me A Message</h3>
+                            <h2>Leave Me A Message</h2>
                             <input 
                                 type='text'
                                 name='contact_name'

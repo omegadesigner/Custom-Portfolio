@@ -1,4 +1,5 @@
 import React from 'react';
+import './MessageCards.css';
 
 function MessageCards(props) {
     return (
@@ -13,6 +14,7 @@ function MessageCards(props) {
             <div className='MessageCards-snapshot'>
                 <h3>{props.message.created_at}</h3>
                 <p>{props.message.message}</p>
+            <button onClick={() => props.handleDeleteMessage(props.message.id)}>Delete</button>
             </div>
             <div 
                 className="message-modal" 

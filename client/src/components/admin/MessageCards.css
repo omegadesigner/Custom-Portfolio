@@ -1,0 +1,10 @@
+.MessageCards-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 25vh;
+    background-color: grey;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
+}

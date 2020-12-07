@@ -12,6 +12,7 @@ function Messages(props) {
                 {props.messages.map(message => (
                     <MessageCards 
                         message={message}
+                        handleDeleteMessage={props.handleDeleteMessage}
                     />
                     ))
                 }
