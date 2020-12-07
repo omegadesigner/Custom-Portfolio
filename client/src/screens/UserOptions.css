@@ -41,10 +41,22 @@
 
 .UserOptions-skill-list {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    width: 30vw;
+    height: 75vh;
+    background-color: grey;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
+    margin: 5px auto;
 }
 
 .UserOptions-skill-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    width: 25vw;
+    border: 1px solid black;
 }
 
 .UserOptions-skill-img {

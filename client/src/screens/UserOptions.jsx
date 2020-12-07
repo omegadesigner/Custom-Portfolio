@@ -34,6 +34,11 @@ function UserOptions(props) {
                         className='UserOptions-skill-card' 
                         key={skill.id}
                         >
+                            <input 
+                                type="checkbox"
+                                name="display"
+                                value="true"
+                            />
                             <img 
                                 className='UserOptions-skill-img' 
                                 src={skill.thumbnail_url} 
