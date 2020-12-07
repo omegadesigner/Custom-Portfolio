@@ -1,0 +1,58 @@
+.ProjectDetails-layout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    height: 60vh;
+    margin-top: -15px;
+}
+
+.project-popup-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 90%;
+    background-color: rgb(185, 70, 57);
+}
+
+.project-popup-img {
+    width: 100%;
+    background-color: grey;
+}
+
+.project-popup-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 90%;
+    background-color: rgb(185, 70, 57);
+}
+
+.project-popup-info {
+    display: flex;
+    height: 80%;
+}
+
+.project-popup-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    height: 30vh;
+    background-color: grey;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 4px ridge black;
+    margin: 20px;
+}
+
+.project-popup-each-skill {
+    display: flex;
+    justify-content: left;
+    width: 30vw;
+    height: 30px;
+}
