@@ -9,12 +9,21 @@ function Projects(props) {
         <div className='Projects-layout'>
             <div className='Projects-window-header'>
                 <h3>Projects</h3>
+                {props.currentUser ? 
+                <div className='Projects-window-button'>
+                    <button>Add Project</button>
+                </div>
+            :<></>
+            }
             </div>
             <div className='Projects-window-list'>
                 {props.projects.map(project => (
-                    <ProjectCards 
+                    <ProjectCards
+                        currentUser={props.currentUser} 
                         project={project}
                         skills={props.skills}
+                        handleEditProject={props.handleEditProject}
+                        handleDeleteProject={props.handleDeleteProject}
                     />
                     ))
                 }

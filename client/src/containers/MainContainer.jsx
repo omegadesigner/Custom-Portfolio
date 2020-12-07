@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Switch, Route, useHistory} from 'react-router-dom';
-import {getAllProjects} from '../services/projects';
+import {getAllProjects, createProject, editProject, deleteProject} from '../services/projects';
 import {getAllSkills, createSkill, editSkill, deleteSkill} from '../services/skills';
 import {getAllMessages, deleteMessage} from '../services/message';
 import Home from '../screens/Home';
@@ -64,6 +64,18 @@ function MainContainer(props) {
         await deleteSkill(id);
         setUpdated(prevState => !prevState)
     }
+    async function handleCreateProject(projectData) {
+        const newProject = await createProject(projectData);
+        setProjects(prevState => [...prevState, newProject])
+    }
+    async function handleEditProject(id, projectData) {
+        await editProject(id, projectData);
+        setUpdated(prevState => !prevState)
+    }
+    async function handleDeleteProject(id) {
+        await deleteProject(id);
+        setUpdated(prevState => !prevState)
+    }
     async function handleDeleteMessage(id) {
         await deleteMessage(id);
         setUpdated(prevState => !prevState)
@@ -74,8 +86,12 @@ function MainContainer(props) {
             <Switch>
                 <Route path='/projects'>
                     <Projects 
+                        currentUser={props.currentUser}
                         projects={projects}
                         skills={skills}
+                        handleCreateProject={handleCreateProject}
+                        handleEditProject={handleEditProject}
+                        handleDeleteProject={handleDeleteProject}
                     />
                 </Route>
                 <Route path='/messages'>
