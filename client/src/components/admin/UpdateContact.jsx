@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './UpdateContact.css';
 
 function UpdateContact(props) {
     const [formData, setFormData] = useState({
@@ -16,11 +17,10 @@ function UpdateContact(props) {
 
     return (
         <div className='UpdateContact-layout'>
-            <div  className='UpdateAdmin-card'>
+            <div  className='UpdateContact-card'>
                 <h3>Edit Admin Info</h3>
-                <hr/>
                 <form 
-                    className='UpdateAdmin-form'
+                    className='UpdateContact-form'
                     onSubmit={(e) => {
                     e.preventDefault();
                     props.handleUpdate(props.currentUser.id, formData);

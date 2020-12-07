@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 30vw;
+    height: 30vw;
 }
 
 .AddSkill-card {
@@ -9,6 +11,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 25vw;
+    height: 25vh;
+    border: 6px ridge rgb(185, 70, 57);
+    box-shadow: 1px 1px grey, 4px 4px black;
+    background-color: grey;
 }
 
 .AddSkill-card {
@@ -18,6 +25,6 @@
 .AddSkill-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 20vw;
+    height: 15vh;
 }

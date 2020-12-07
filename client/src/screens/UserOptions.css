@@ -31,7 +31,7 @@
     height: 44vh;
 }
 
-.UserOptions-left-panel {
+.UserOptions-right-panel {
     display: flex;
     justify-content: center;
     align-items: center;
